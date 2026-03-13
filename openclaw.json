@@ -70,6 +70,14 @@
     "tailscale": {
       "mode": "off",
       "resetOnExit": false
+    },
+    "trustedProxies": [
+      "127.0.0.1"
+    ],
+    "controlUi": {
+      "allowedOrigins": [
+        "https://openclaw-railway-template-production-2741.up.railway.app"
+      ]
     }
   },
   "skills": {
@@ -89,7 +97,8 @@
     "allow": [
       "telegram",
       "usage-tracker"
-    ],
+    ]
+  },
     "load": {
       "paths": [
         "/app/node_modules/@chrysb/alphaclaw/lib/plugin/usage-tracker"

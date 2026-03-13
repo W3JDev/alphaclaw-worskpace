@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "accounts": [
+    {
+      "id": "8a38e7c3",
+      "email": "w3jdev@gmail.com",
+      "client": "personal",
+      "personal": true,
+      "services": [
+        "drive:read",
+        "meet:write",
+        "sheets:write",
+        "docs:write",
+        "meet:read",
+        "tasks:write",
+        "drive:write",
+        "sheets:read",
+        "docs:read",
+        "gmail:read",
+        "tasks:read",
+        "contacts:write",
+        "calendar:write",
+        "contacts:read",
+        "gmail:write",
+        "calendar:read"
+      ],
+      "authenticated": true,
+      "gmailWatch": {
+        "enabled": true,
+        "port": 18801,
+        "expiration": null,
+        "lastPushAt": 1773393499876,
+        "pid": 67
+      }
+    }
+  ],
+  "gmailPush": {
+    "token": "6EoBjyNFNYNiqlUSQBUsvGTpc9zRzVGm",
+    "topics": {
+      "personal": "projects/gen-lang-client-0423187661/topics/gog-gmail-watch-personal"
+    }
+  }
+}

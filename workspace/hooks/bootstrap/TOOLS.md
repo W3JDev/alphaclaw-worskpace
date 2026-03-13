@@ -44,4 +44,6 @@ Webhook transform files must follow this convention:
 
 ## Available Google Accounts
 
-No Google accounts are currently configured.
+Configured in AlphaClaw (use `--client <client> --account <email>` for gog commands):
+
+- w3jdev@gmail.com (type: personal; client: personal; status: authenticated; services: drive:read, meet:write, sheets:write, docs:write, meet:read, tasks:write, drive:write, sheets:read, docs:read, gmail:read, tasks:read, contacts:write, calendar:write, contacts:read, gmail:write, calendar:read)
