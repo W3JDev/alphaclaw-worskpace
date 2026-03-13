@@ -150,10 +150,28 @@ gog calendar conflicts --calendars "primary" --today
 # Special event types
 gog calendar create primary --event-type focus-time --from ... --to ...
 gog calendar create primary --event-type out-of-office --from ... --to ... --all-day
-```
+## Elite Sub-Skills
 
-JSON output includes `startDayOfWeek`, `endDayOfWeek`, `timezone`, and `startLocal`/`endLocal` fields.
-Use `primary` as calendarId for the user's default calendar.
+- [SKILL-sheets-premium.md](SKILL-sheets-premium.md) — Advanced sheet formulas and data validation automation
+- [SKILL-docs-premium.md](SKILL-docs-premium.md) — Executive document structure, TOCs, and templating
+- [SKILL-gmail-automation.md](SKILL-gmail-automation.md) — Professional email workflows and threading
+- [SKILL-drive-automation.md](SKILL-drive-automation.md) — Automated folder, permission, and share link management
+- [SKILL-calendar-automation.md](SKILL-calendar-automation.md) — Smart event handling and free/busy workflows
+- [SKILL-recipes.md](SKILL-recipes.md) — Multi-step automation templates
+- [SKILL-personas.md](SKILL-personas.md) — Role-based persona orchestration
+
+## Skill Stack by Task
+
+| Task | Load These Files |
+| :--- | :--- |
+| Premium Sheets | SKILL.md + SKILL-sheets-premium.md + SKILL-personas.md (project-manager) |
+| Premium Docs | SKILL.md + SKILL-docs-premium.md + SKILL-personas.md (exec-assistant) |
+| Gmail Automation | SKILL.md + SKILL-gmail-automation.md + SKILL-personas.md (exec-assistant) |
+| Drive Ops | SKILL.md + SKILL-drive-automation.md + SKILL-personas.md (it-admin) |
+| Calendar/Events | SKILL.md + SKILL-calendar-automation.md + SKILL-personas.md (event-coordinator) |
+| Full Reports | SKILL.md + SKILL-sheets-premium.md + SKILL-docs-premium.md + SKILL-recipes.md + SKILL-personas.md (researcher) |
+| Sales Ops | SKILL.md + SKILL-sheets-premium.md + SKILL-gmail-automation.md + SKILL-personas.md (sales-ops) |
+
 
 ## Drive
 
