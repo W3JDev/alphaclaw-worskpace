@@ -114,21 +114,20 @@
       "groupPolicy": "allowlist"
     }
   },
-  "plugins": {
+ "plugins": {
   "allow": ["telegram", "usage-tracker"],
   "load": {
     "paths": ["/app/node_modules/@chrysb/alphaclaw/lib/plugin/usage-tracker"]
-    }
-   },
-    "entries": {
-      "telegram": {
-        "enabled": true
-      },
-      "usage-tracker": {
-        "enabled": true
-      }
-    }
   },
+  "entries": {
+    "telegram": {
+      "enabled": true
+    },
+    "usage-tracker": {
+      "enabled": true
+    }
+  }
+},
   "hooks": {
     "internal": {
       "entries": {
