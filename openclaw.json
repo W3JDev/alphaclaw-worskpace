@@ -1,13 +1,18 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.11",
-    "lastTouchedAt": "2026-03-13T08:42:06.133Z"
+    "lastTouchedAt": "2026-03-14T19:17:30.544Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-13T08:42:04.585Z",
     "lastRunVersion": "2026.3.11",
     "lastRunCommand": "onboard",
     "lastRunMode": "local"
+  },
+  "update": {
+    "auto": {
+      "enabled": true
+    }
   },
   "auth": {
     "profiles": {
@@ -38,7 +43,8 @@
         "openai/gpt-4o": {},
         "google/gemini-2.5-flash-preview-09-2025": {},
         "google/gemini-3.1-flash-lite-preview": {},
-        "google/gemini-3-flash-preview": {}
+        "google/gemini-3-flash-preview": {},
+        "openai/gpt-5.4": {}
       },
       "workspace": "/data/.openclaw/workspace"
     },
@@ -80,65 +86,15 @@
   "session": {
     "dmScope": "per-channel-peer"
   },
-  "gateway": {
-    "port": 18789,
-    "mode": "local",
-    "bind": "loopback",
-    "auth": {
-      "mode": "token",
-      "token": "${OPENCLAW_GATEWAY_TOKEN}"
-    },
-    "tailscale": {
-      "mode": "off",
-      "resetOnExit": false
-    },
-    "trustedProxies": [
-      "127.0.0.1"
-    ],
-    "controlUi": {
-      "allowedOrigins": [
-        "https://openclaw-railway-template-production-2741.up.railway.app"
-      ]
-    }
-  },
-  "skills": {
-    "install": {
-      "nodeManager": "npm"
-    }
-  },
-  "channels": {
-    "telegram": {
-      "enabled": true,
-      "botToken": "${TELEGRAM_BOT_TOKEN}",
-      "dmPolicy": "pairing",
-      "groupPolicy": "allowlist"
-    }
-  },
- "plugins": {
-    "allow": ["telegram", "usage-tracker"],
-    "load": {
-      "paths": ["/app/node_modules/@chrysb/alphaclaw/lib/plugin/usage-tracker"]
-    },
-    "entries": {
-      "telegram": { "enabled": true },
-      "usage-tracker": { "enabled": true }
-    }
-  },
   "hooks": {
-    "internal": {
-      "entries": {
-        "bootstrap-extra-files": {
-          "enabled": true,
-          "paths": [
-            "hooks/bootstrap/AGENTS.md",
-            "hooks/bootstrap/TOOLS.md"
-          ]
-        }
-      },
-      "enabled": true
-    },
     "enabled": true,
+    "path": "/hooks",
     "token": "${WEBHOOK_TOKEN}",
+    "defaultSessionKey": "hook:ingress",
+    "allowRequestSessionKey": false,
+    "allowedSessionKeyPrefixes": [
+      "hook:"
+    ],
     "presets": [
       "gmail"
     ],
@@ -148,21 +104,81 @@
           "path": "gmail"
         },
         "action": "agent",
-        "name": "Gmail",
         "wakeMode": "now",
-        "transform": {
-          "module": "gmail/gmail-transform.mjs"
-        },
+        "name": "Gmail",
+        "agentId": "main",
         "deliver": true,
         "channel": "last",
-        "agentId": "main"
+        "transform": {
+          "module": "gmail/gmail-transform.mjs"
+        }
       }
     ],
-    "path": "/hooks",
-    "defaultSessionKey": "hook:ingress",
-    "allowRequestSessionKey": false,
-    "allowedSessionKeyPrefixes": [
-      "hook:"
-    ]
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "bootstrap-extra-files": {
+          "enabled": true,
+          "paths": [
+            "hooks/bootstrap/AGENTS.md",
+            "hooks/bootstrap/TOOLS.md"
+          ]
+        }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "groupPolicy": "allowlist",
+      "streaming": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "allowedOrigins": [
+        "https://openclaw-railway-template-production-2741.up.railway.app"
+      ]
+    },
+    "auth": {
+      "mode": "token",
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    },
+    "trustedProxies": [
+      "127.0.0.1"
+    ],
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "plugins": {
+    "allow": [
+      "telegram",
+      "usage-tracker"
+    ],
+    "load": {
+      "paths": [
+        "/app/node_modules/@chrysb/alphaclaw/lib/plugin/usage-tracker"
+      ]
+    },
+    "entries": {
+      "telegram": {
+        "enabled": true
+      },
+      "usage-tracker": {
+        "enabled": true
+      }
+    }
   }
 }
