@@ -1,7 +1,12 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.11",
-    "lastTouchedAt": "2026-03-14T19:17:30.544Z"
+    "lastTouchedAt": "2026-03-14T19:41:00.226Z"
+  },
+  "env": {
+    "shellEnv": {
+      "enabled": true
+    }
   },
   "wizard": {
     "lastRunAt": "2026-03-13T08:42:04.585Z",
@@ -9,9 +14,35 @@
     "lastRunCommand": "onboard",
     "lastRunMode": "local"
   },
+  "diagnostics": {
+    "enabled": true,
+    "otel": {
+      "enabled": true,
+      "metrics": true,
+      "logs": true
+    },
+    "cacheTrace": {
+      "enabled": true,
+      "includeMessages": true,
+      "includePrompt": true,
+      "includeSystem": true
+    }
+  },
   "update": {
+    "checkOnStart": true,
     "auto": {
       "enabled": true
+    }
+  },
+  "browser": {
+    "enabled": true,
+    "evaluateEnabled": true,
+    "headless": true,
+    "noSandbox": true,
+    "attachOnly": true,
+    "ssrfPolicy": {
+      "allowPrivateNetwork": true,
+      "dangerouslyAllowPrivateNetwork": true
     }
   },
   "auth": {
@@ -30,10 +61,16 @@
       }
     }
   },
+  "acp": {
+    "enabled": true,
+    "stream": {
+      "repeatSuppression": true
+    }
+  },
   "agents": {
     "defaults": {
       "model": {
-        "primary": "google/gemini-3.1-flash-lite-preview"
+        "primary": "openai/gpt-5.4"
       },
       "models": {
         "google/gemini-3.1-pro-preview": {},
@@ -63,39 +100,106 @@
           "primary": "google/gemini-3.1-flash-lite-preview"
         },
         "tools": {
-          "profile": "coding",
-          "alsoAllow": [
-            "message",
-            "tts",
-            "browser",
-            "web_search",
-            "web_fetch",
-            "agents_list",
-            "canvas",
-            "nodes"
-          ]
+          "profile": "full"
         }
       }
     ]
   },
   "tools": {
-    "profile": "full"
+    "profile": "full",
+    "allow": [
+      ""
+    ],
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "brave",
+        "grok": {
+          "inlineCitations": true
+        }
+      },
+      "fetch": {
+        "enabled": true
+      }
+    },
+    "media": {
+      "video": {
+        "enabled": true,
+        "scope": {
+          "default": "allow"
+        },
+        "echoTranscript": true
+      }
+    },
+    "links": {
+      "enabled": true
+    },
+    "sessions": {
+      "visibility": "all"
+    },
+    "loopDetection": {
+      "enabled": true
+    },
+    "message": {
+      "allowCrossContextSend": true,
+      "crossContext": {
+        "allowWithinProvider": true,
+        "allowAcrossProviders": true,
+        "marker": {
+          "enabled": true
+        }
+      },
+      "broadcast": {
+        "enabled": true
+      }
+    },
+    "agentToAgent": {
+      "enabled": true
+    },
+    "elevated": {
+      "enabled": true
+    },
+    "exec": {
+      "security": "full"
+    },
+    "fs": {
+      "workspaceOnly": true
+    }
+  },
+  "media": {
+    "preserveFilenames": true
   },
   "commands": {
-    "native": "auto",
-    "nativeSkills": "auto",
+    "native": true,
+    "nativeSkills": true,
+    "text": true,
+    "bash": true,
+    "config": true,
+    "debug": true,
     "restart": true,
+    "useAccessGroups": true,
     "ownerDisplay": "raw"
+  },
+  "approvals": {
+    "exec": {
+      "enabled": true
+    }
   },
   "session": {
     "dmScope": "per-channel-peer"
+  },
+  "cron": {
+    "enabled": true,
+    "failureAlert": {
+      "enabled": true
+    }
   },
   "hooks": {
     "enabled": true,
     "path": "/hooks",
     "token": "${WEBHOOK_TOKEN}",
     "defaultSessionKey": "hook:ingress",
-    "allowRequestSessionKey": false,
+    "allowRequestSessionKey": true,
     "allowedSessionKeyPrefixes": [
       "hook:"
     ],
@@ -112,12 +216,17 @@
         "name": "Gmail",
         "agentId": "main",
         "deliver": true,
+        "allowUnsafeExternalContent": true,
         "channel": "last",
         "transform": {
           "module": "gmail/gmail-transform.mjs"
         }
       }
     ],
+    "gmail": {
+      "includeBody": true,
+      "allowUnsafeExternalContent": true
+    },
     "internal": {
       "enabled": true,
       "entries": {
@@ -131,6 +240,9 @@
       }
     }
   },
+  "web": {
+    "enabled": true
+  },
   "channels": {
     "telegram": {
       "enabled": true,
@@ -140,11 +252,24 @@
       "streaming": "partial"
     }
   },
+  "discovery": {
+    "wideArea": {
+      "enabled": true
+    },
+    "mdns": {
+      "mode": "full"
+    }
+  },
+  "canvasHost": {
+    "enabled": true,
+    "liveReload": true
+  },
   "gateway": {
     "port": 18789,
     "mode": "local",
     "bind": "loopback",
     "controlUi": {
+      "enabled": true,
       "allowedOrigins": [
         "https://openclaw-railway-template-production-2741.up.railway.app"
       ]
@@ -161,12 +286,27 @@
       "resetOnExit": false
     }
   },
+  "memory": {
+    "backend": "builtin",
+    "citations": "auto",
+    "qmd": {
+      "includeDefaultMemory": true,
+      "sessions": {
+        "enabled": true
+      }
+    }
+  },
   "skills": {
+    "load": {
+      "watch": true
+    },
     "install": {
+      "preferBrew": true,
       "nodeManager": "npm"
     }
   },
   "plugins": {
+    "enabled": true,
     "allow": [
       "telegram",
       "usage-tracker"
@@ -178,10 +318,85 @@
     },
     "entries": {
       "telegram": {
-        "enabled": true
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
       },
       "usage-tracker": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "acpx": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "copilot-proxy": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "diagnostics-otel": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "google-gemini-cli-auth": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "llm-task": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "lobster": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "memory-lancedb": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "open-prose": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "phone-control": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "talk-voice": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
+      },
+      "voice-call": {
         "enabled": true
+      },
+      "whatsapp": {
+        "enabled": true,
+        "hooks": {
+          "allowPromptInjection": true
+        }
       }
     }
   }
