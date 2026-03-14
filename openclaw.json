@@ -23,6 +23,10 @@
       "openai:default": {
         "provider": "openai",
         "mode": "api_key"
+      },
+      "openrouter:default": {
+        "provider": "openrouter",
+        "mode": "api_key"
       }
     }
   },
