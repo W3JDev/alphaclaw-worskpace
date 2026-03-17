@@ -1,16 +1,22 @@
 # USER.md - About Your Human
 
-_Learn about the person you're helping. Update this as you go._
-
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+- **Name:** Muhammad Nurunnabi
+- **What to call them:** Muhammad
+- **Pronouns:** he/him
+- **Timezone:** UTC (workspace default; verify personal local timezone if needed)
+- **Notes:** Founder/operator context appears across workspace and email activity. Likely juggling business operations, hiring/onboarding, payments, domains, and startup tooling.
 
 ## Context
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
+- Cares about execution, not fluff.
+- Likely operating across multiple identities/projects including W3J LLC and mybijou.xyz.
+- Current themes observed from recent activity:
+  - pre-employment/background verification for Bold Business PH, Inc.
+  - Payoneer application review and business verification
+  - HubSpot for Startups onboarding/webinar flow
+  - domain/email routing and inbox verification tasks
+- Benefits from concise summaries with clear next actions and urgency.
+- Probably does not want noisy interruptions for low-value marketing email.
 
 ---
 
