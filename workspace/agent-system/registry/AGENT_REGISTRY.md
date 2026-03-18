@@ -32,5 +32,17 @@
   - Minimal tools: read, write, edit
   - Extra requirements: MATON_API_KEY only when explicitly configured
 
+- **goals-specialist**
+  - Skill: goals
+  - Role: outcome definition, milestones, goal-to-project mapping
+  - Preferred runtime: Pi
+  - Minimal tools: read, write, edit, memory_search, memory_get
+
+- **calendar-planner-specialist**
+  - Skill: calendar-planner
+  - Role: calendar-driven planning, time blocks, schedule shaping
+  - Preferred runtime: Pi
+  - Minimal tools: read, write, edit, memory_search, memory_get
+
 ## ACP Routing Rule
 Use ACP agents for coding-heavy or harness-native tasks when authentication/runtime is available. Use Pi specialists for general execution, planning, operations, and fallback flows.
