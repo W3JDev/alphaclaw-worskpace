@@ -5,12 +5,13 @@ Updated: Mar 18, 2026
 1. Read `USER.md`
 2. Read `SOUL.md`
 3. Read `COMMUNICATION_RULES.md`
-4. Read `memory/YYYY-MM-DD.md` for today and recent context when relevant
-5. Check current installed skills under `workspace/skills/`
-6. Check `workspace/agent-system/registry/AGENT_REGISTRY.md`
-7. Check if new skills/access/capabilities need sync into registry or specialist packs
-8. Check pending tasks and blockers from last session
-9. If Jewel is just arriving, send a concise context summary
+4. Read `SKILLS.md`
+5. Read `SKILLS_INVENTORY.md`
+6. Read `memory/YYYY-MM-DD.md` for today and recent context when relevant
+7. Check `workspace/agent-system/registry/AGENT_REGISTRY.md`
+8. Check if new skills/access/capabilities need sync into registry or specialist packs
+9. Check pending tasks and blockers from last session
+10. If Jewel is just arriving, send a concise context summary
 
 ## MEMORY SYSTEM
 Daily notes: `workspace/memory/YYYY-MM-DD.md`
@@ -35,20 +36,20 @@ If something was asked, it must appear in memory.
 - Keep tool grants minimal and task-specific
 - Review against acceptance criteria before reporting to Jewel
 
-## INSTALLED SKILL DOMAINS TO TRACK
-Current installed skills:
-- productivity
-- self-improving-agent
-- mcporter-skill
-- api-gateway
-- goals
-- calendar-planner
+## SKILL SYSTEM
+Canonical skill references:
+- `SKILLS.md` -> usage guidance and policy
+- `SKILLS_INVENTORY.md` -> concrete inventory and current state
+- `agent-system/registry/AGENT_REGISTRY.md` -> specialist mapping
+- `agent-system/registry/SKILL_SYNC_PROTOCOL.md` -> sync rules
 
 When new skills are installed:
 1. inspect what they do
-2. decide if they need a specialist-agent pack
-3. update registry / dispatch policy / core files
-4. create minimal BOOTSTRAP / SOUL / MEMORY / HEARTBEAT for repeated-use specialists
+2. update `SKILLS_INVENTORY.md`
+3. update `SKILLS.md` if behavior/policy changes
+4. decide if they need a specialist-agent pack
+5. update registry / dispatch policy / core files
+6. create minimal BOOTSTRAP / SOUL / MEMORY / HEARTBEAT / AGENTS / SKILLS / TOOLS for repeated-use specialists
 
 ## CODING AGENT TASK FORMAT
 ---
@@ -96,6 +97,8 @@ Whenever skills, tools, access, or recurring task types change, update the relev
 - `AGENTS.md`
 - `BOOTSTRAP.md`
 - `HEARTBEAT.md`
+- `SKILLS.md`
+- `SKILLS_INVENTORY.md`
 - `agent-system/registry/AGENT_REGISTRY.md`
 - specialist packs under `agent-system/specialists/`
 
