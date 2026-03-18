@@ -11,6 +11,8 @@ Do not treat folder presence alone as proof that a skill is active for this sess
 - **Session-usable**: skill is actually available to AlphaClaw in this session's current tool/skill environment
 - **Workspace-installed**: skill was installed into `workspace/skills/`
 - **Specialist-mapped**: skill has a dedicated specialist pack under `workspace/agent-system/specialists/`
+- **Dispatch-ready**: specialist/runtime dispatch docs exist and AlphaClaw can route work through it
+- **Runtime-live**: actual tool/runtime/auth path has been verified for live execution
 
 ## Session-Usable Built-in Skills
 These are the skills explicitly available to AlphaClaw in the current environment:
@@ -38,16 +40,16 @@ These are installed locally in `workspace/skills/` and may be used through works
 - productivity
 - self-improving-agent
 
-## Specialist-Agent Coverage
-- productivity -> yes
-- mcporter / mcporter-skill -> yes
-- self-improving-agent -> yes
-- api-gateway -> yes
-- goals -> yes
-- calendar-planner -> yes
-- excel-xlsx -> no specialist yet
-- gog / gog-cli -> no specialist yet
-- coding-agent -> orchestrator-routed, no dedicated specialist pack yet
+## Specialist / Dispatch Coverage
+- productivity -> specialist yes / dispatch-ready yes / runtime-live yes
+- mcporter / mcporter-skill -> specialist yes / dispatch-ready yes / runtime-live yes
+- self-improving-agent -> specialist yes / dispatch-ready yes / runtime-live yes
+- api-gateway -> specialist yes / dispatch-ready yes / runtime-live partial (needs MATON_API_KEY for live external use)
+- goals -> specialist yes / dispatch-ready yes / runtime-live yes
+- calendar-planner -> specialist yes / dispatch-ready yes / runtime-live yes
+- gog / gog-cli -> specialist yes / dispatch-ready yes / runtime-live partial (depends on connected-account operation)
+- coding-agent / acp-router -> specialist yes / dispatch-ready yes / runtime-live partial (depends on ACP auth/runtime)
+- excel-xlsx -> specialist yes / dispatch-ready candidate / runtime-live no
 
 ## On-Disk Runtime Skills (Not equal to enabled)
 Skills present under `/app/node_modules/openclaw/skills/` include many additional folders, but they must NOT be assumed active just because they exist on disk.
@@ -79,5 +81,7 @@ Whenever a skill is added/removed/changed, update this file and keep the states 
 - enabled/session-usable
 - workspace-installed
 - specialist-mapped
+- dispatch-ready
+- runtime-live
 
 Never present on-disk inventory as if it were guaranteed active capability.
