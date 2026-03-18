@@ -43,6 +43,11 @@ Canonical skill references:
 - `agent-system/registry/AGENT_REGISTRY.md` -> specialist mapping
 - `agent-system/registry/SKILL_SYNC_PROTOCOL.md` -> sync rules
 
+Accuracy rules:
+- do not treat on-disk skill folders as proof of active capability
+- distinguish session-usable vs workspace-installed vs on-disk
+- verify before routing if there is any ambiguity
+
 When new skills are installed:
 1. inspect what they do
 2. update `SKILLS_INVENTORY.md`
