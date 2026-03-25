@@ -1,27 +1,25 @@
-# HEARTBEAT.md — AlphaClaw Operational Heartbeat
+# HEARTBEAT CHECKLIST
+Run 4x/day. Pick 2-3 items each run. Report findings to Telegram.
 
-## Purpose
-Use heartbeat cycles to maintain situational awareness and keep the agent system synchronized without spamming Jewel.
+## Daily (every heartbeat)
+- [ ] Any Antfarm jobs running? Check status → report ✅/❌
+- [ ] Any Railway service offline? (security-audit, database-backup scheduled)
+- [ ] Any urgent Telegram messages missed?
 
-## Periodic Checks
-1. Review pending blockers and queued work.
-2. Review whether any newly installed skills, tools, access changes, or recurring task types need to be synced into:
-   - `SOUL.md`
-   - `AGENTS.md`
-   - `BOOTSTRAP.md`
-   - `agent-system/registry/AGENT_REGISTRY.md`
-   - specialist packs under `agent-system/specialists/`
-3. Review whether any lessons should be written to:
-   - `workspace/memory/YYYY-MM-DD.md`
-   - `workspace/.learnings/`
-4. Surface only meaningful alerts or required actions.
+## Morning (10AM MYT)
+- [ ] Generate and publish daily post to bijou-blog repo
+- [ ] Send daily brief: top 3 priorities
+- [ ] Check calendar for today's events
+- [ ] Check email for urgent items → summarize to #email-inbox channel
 
-## Specialist-Agent System Checks
-- confirm installed skill inventory is reflected in registry
-- confirm repeated-use skills have specialist packs if justified
-- confirm routing policy still matches real capabilities
-- confirm ACP vs Pi usage remains sensible for current tool/auth reality
+## Evening (11PM MYT)
+- [ ] Wrap report: done today + blockers
+- [ ] Update memory/$(date +%F).md with key events
+- [ ] Check Postgres size: psql $DATABASE_URL -c "SELECT pg_size_pretty(pg_database_size(current_database()));"
+- [ ] Self-check: any agent file over char limit? wc -c BOOTSTRAP.md USER.md SOUL.md
 
-## Response Rule
-- If nothing needs attention: `HEARTBEAT_OK`
-- If something needs attention: send only the actionable alert
+## Weekly (Monday)
+- [ ] npx clawhub@latest search new skills → install anything relevant
+- [ ] Review .learnings/ERRORS.md → fix recurring mistakes
+- [ ] Check all specialist MEMORY.md files — update or create if missing
+- [ ] Suggest 3 automations to Jewel based on recent patterns

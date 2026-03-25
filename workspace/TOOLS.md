@@ -38,3 +38,29 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+<!-- antfarm:workflows -->
+# Antfarm Workflows
+
+Antfarm CLI (always use full path to avoid PATH issues):
+`node ~/.openclaw/workspace/antfarm/dist/cli/cli.js`
+
+Commands:
+- Install: `node ~/.openclaw/workspace/antfarm/dist/cli/cli.js workflow install <name>`
+- Run: `node ~/.openclaw/workspace/antfarm/dist/cli/cli.js workflow run <workflow-id> "<task>"`
+- Status: `node ~/.openclaw/workspace/antfarm/dist/cli/cli.js workflow status "<task title>"`
+- Logs: `node ~/.openclaw/workspace/antfarm/dist/cli/cli.js logs`
+
+Workflows are self-advancing via per-agent cron jobs. No manual orchestration needed.
+<!-- /antfarm:workflows -->
+
+
+## Railway Environment Variables
+Available in container env (use directly in commands):
+- DATABASE_URL — Postgres connection string
+- REDIS_URL — Redis connection string  
+- Check all: printenv | grep -E "DATABASE|REDIS|MATON|API"
+
+## DB Quick Commands
+- Postgres size: psql $DATABASE_URL -c "SELECT pg_size_pretty(pg_database_size(current_database()));"
+- Redis ping: redis-cli -u $REDIS_URL ping

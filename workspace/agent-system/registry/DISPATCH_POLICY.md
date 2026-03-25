@@ -15,3 +15,13 @@
 ## Learning Loop
 - Specialist mistakes, blockers, and corrections should be logged via the self-improvement flow.
 - Repeated patterns should be promoted to SOUL.md / AGENTS.md / TOOLS.md when broadly useful.
+
+## Antfarm Dispatch Rule
+When task_type = "code" | "feature" | "PR" | "refactor" | "build":
+  Run: antfarm workflow run feature-dev "<task>"
+  Wait for: STATUS: done
+
+## Bold Business Team (NDA - Isolated)
+"Bold Amplify" | "RAG pipeline" | "LangGraph" | "AWS EC2" → bold-amplify-specialist
+"Zara" | "recruiting" | "candidate" → zara-specialist
+"Brio" | "CEO agent" | "executive briefing" → brio-specialist

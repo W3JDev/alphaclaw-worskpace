@@ -1,4 +1,249 @@
 {
   "version": 1,
-  "jobs": []
+  "jobs": [
+    {
+      "id": "5b167bf8-cb75-44e5-abfa-1c80cd918066",
+      "name": "meeting-check-2045",
+      "enabled": true,
+      "createdAtMs": 1774281580301,
+      "updatedAtMs": 1774413921438,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 12 * * 1-5",
+        "tz": "Asia/Kuala_Lumpur"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Use Composio MCP (GOOGLEDRIVE_FIND_FILE) with mnurunnabi@boldbusiness.com to check Drive folders 1zQbaCHM1RFoVR1ysFU2n5oP16YCwK40D and 1Rr-edCj_L-QbvAeT9dRcip4a-n9pTzjs for new files. Extract action items. Create GOOGLETASKS_CREATE_TASK and GOOGLECALENDAR_CREATE_EVENT for business account only. Track processed file IDs in workspace/meeting-processed.json. Do NOT use gog-cli."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8226870570"
+      },
+      "state": {
+        "nextRunAtMs": 1774500300000,
+        "lastRunAtMs": 1774413900003,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 21435,
+        "lastErrorReason": "rate_limit",
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 2,
+        "lastError": "⚠️ API rate limit reached. Please try again later."
+      }
+    },
+    {
+      "id": "da0ce1d5-29a0-4a4b-91fc-098b968a81eb",
+      "name": "meeting-check-0130",
+      "enabled": true,
+      "createdAtMs": 1774281583041,
+      "updatedAtMs": 1774344621704,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 17 * * 1-5",
+        "tz": "Asia/Kuala_Lumpur"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Use Composio MCP to check Drive folders 1zQbaCHM1RFoVR1ysFU2n5oP16YCwK40D and 1Rr-edCj_L-QbvAeT9dRcip4a-n9pTzjs for new files since last check. Extract action items. Create Google Tasks + Calendar events for mnurunnabi@boldbusiness.com only. Track in workspace/meeting-processed.json. Skip duplicates."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8226870570"
+      },
+      "state": {
+        "nextRunAtMs": 1774431000000,
+        "lastRunAtMs": 1774344600005,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 21699,
+        "lastError": "⚠️ API rate limit reached. Please try again later.",
+        "lastErrorReason": "rate_limit",
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "4abab69f-9d64-4b75-836d-d1aad6ad6a30",
+      "name": "meeting-check-0300",
+      "enabled": true,
+      "createdAtMs": 1774281585827,
+      "updatedAtMs": 1774350021763,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 19 * * 1-5",
+        "tz": "Asia/Kuala_Lumpur"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Use Composio MCP to check Drive folders 1zQbaCHM1RFoVR1ysFU2n5oP16YCwK40D and 1Rr-edCj_L-QbvAeT9dRcip4a-n9pTzjs for new files. Extract action items. Create Google Tasks + Calendar events for business account only. Track in workspace/meeting-processed.json. Skip duplicates."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8226870570"
+      },
+      "state": {
+        "nextRunAtMs": 1774436400000,
+        "lastRunAtMs": 1774350000006,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 21757,
+        "lastError": "⚠️ API rate limit reached. Please try again later.",
+        "lastErrorReason": "rate_limit",
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "c4d6946f-ca2d-4e65-88c7-a0a5abd18794",
+      "name": "meeting-check-0500",
+      "enabled": true,
+      "createdAtMs": 1774281588588,
+      "updatedAtMs": 1774357221293,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * 1-5",
+        "tz": "Asia/Kuala_Lumpur"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Use Composio MCP to check Drive folders 1zQbaCHM1RFoVR1ysFU2n5oP16YCwK40D and 1Rr-edCj_L-QbvAeT9dRcip4a-n9pTzjs for new files. Extract action items. Create Google Tasks + Calendar events for business account only. Track in workspace/meeting-processed.json. Skip duplicates."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8226870570"
+      },
+      "state": {
+        "nextRunAtMs": 1774443600000,
+        "lastRunAtMs": 1774357200006,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 21287,
+        "lastError": "⚠️ API rate limit reached. Please try again later.",
+        "lastErrorReason": "rate_limit",
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "61f76a12-9006-4d81-96a6-97be5dca5914",
+      "name": "wake-5pm",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774414619778,
+      "updatedAtMs": 1774414619778,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-25T09:00:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "⏰ Wake up, Jewel! It's 5:00 PM."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last",
+        "to": "telegram:8226870570"
+      },
+      "state": {
+        "nextRunAtMs": 1774429200000
+      }
+    },
+    {
+      "id": "6cefc50b-b2d8-428e-bd89-55de6bc1d045",
+      "name": "wake-5pm-2",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774414734588,
+      "updatedAtMs": 1774414734588,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-25T09:00:10.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "⏰ SERIOUSLY, GET UP."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last",
+        "to": "telegram:8226870570"
+      },
+      "state": {
+        "nextRunAtMs": 1774429210000
+      }
+    },
+    {
+      "id": "64159e76-050d-49a7-91fc-df47f6a50037",
+      "name": "wake-5pm-3",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774414737212,
+      "updatedAtMs": 1774414737212,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-25T09:00:20.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "⏰ 5:00 PM MYT! ALARM!"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last",
+        "to": "telegram:8226870570"
+      },
+      "state": {
+        "nextRunAtMs": 1774429220000
+      }
+    },
+    {
+      "id": "6f073fe3-cdce-4515-b67d-4f1ca7712a6b",
+      "name": "wake-5pm-4",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1774414739833,
+      "updatedAtMs": 1774414739833,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-25T09:00:30.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "⏰ JEWEL. WAKE. UP."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last",
+        "to": "telegram:8226870570"
+      },
+      "state": {
+        "nextRunAtMs": 1774429230000
+      }
+    }
+  ]
 }

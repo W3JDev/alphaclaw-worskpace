@@ -18,6 +18,6 @@ db/**
 !hooks/transforms/**
 !cron/
 !cron/jobs.json
-!openclaw.json
 !.gitignore
+workspace/secrets/
 openclaw.json

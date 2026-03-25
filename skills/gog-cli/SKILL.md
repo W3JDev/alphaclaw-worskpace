@@ -1,6 +1,6 @@
 ---
 name: gog-cli
-description: Google Workspace CLI (gog) — command reference for Gmail, Calendar, Drive, Sheets, Docs, Tasks, Contacts, Meet.
+description: Google Workspace CLI (gog) — command reference for Gmail, Calendar, Drive, Sheets, Docs.
 ---
 
 # gog — Google Workspace CLI
@@ -22,7 +22,7 @@ Fast, script-friendly CLI for Google Workspace. All commands output structured J
 
 | Email | Client | Services |
 | ----- | ------ | -------- |
-| w3jdev@gmail.com | personal | drive, meet, sheets, docs, tasks, gmail, contacts, calendar |
+| w3jdev@gmail.com | personal | gmail, calendar, docs, drive, sheets |
 
 Always pass `--account <email>` (and `--client <name>` if not "default") so gog targets the correct account.
 
@@ -150,28 +150,10 @@ gog calendar conflicts --calendars "primary" --today
 # Special event types
 gog calendar create primary --event-type focus-time --from ... --to ...
 gog calendar create primary --event-type out-of-office --from ... --to ... --all-day
-## Elite Sub-Skills
+```
 
-- [SKILL-sheets-premium.md](SKILL-sheets-premium.md) — Advanced sheet formulas and data validation automation
-- [SKILL-docs-premium.md](SKILL-docs-premium.md) — Executive document structure, TOCs, and templating
-- [SKILL-gmail-automation.md](SKILL-gmail-automation.md) — Professional email workflows and threading
-- [SKILL-drive-automation.md](SKILL-drive-automation.md) — Automated folder, permission, and share link management
-- [SKILL-calendar-automation.md](SKILL-calendar-automation.md) — Smart event handling and free/busy workflows
-- [SKILL-recipes.md](SKILL-recipes.md) — Multi-step automation templates
-- [SKILL-personas.md](SKILL-personas.md) — Role-based persona orchestration
-
-## Skill Stack by Task
-
-| Task | Load These Files |
-| :--- | :--- |
-| Premium Sheets | SKILL.md + SKILL-sheets-premium.md + SKILL-personas.md (project-manager) |
-| Premium Docs | SKILL.md + SKILL-docs-premium.md + SKILL-personas.md (exec-assistant) |
-| Gmail Automation | SKILL.md + SKILL-gmail-automation.md + SKILL-personas.md (exec-assistant) |
-| Drive Ops | SKILL.md + SKILL-drive-automation.md + SKILL-personas.md (it-admin) |
-| Calendar/Events | SKILL.md + SKILL-calendar-automation.md + SKILL-personas.md (event-coordinator) |
-| Full Reports | SKILL.md + SKILL-sheets-premium.md + SKILL-docs-premium.md + SKILL-recipes.md + SKILL-personas.md (researcher) |
-| Sales Ops | SKILL.md + SKILL-sheets-premium.md + SKILL-gmail-automation.md + SKILL-personas.md (sales-ops) |
-
+JSON output includes `startDayOfWeek`, `endDayOfWeek`, `timezone`, and `startLocal`/`endLocal` fields.
+Use `primary` as calendarId for the user's default calendar.
 
 ## Drive
 
@@ -311,75 +293,4 @@ gog docs sed <docId> 's/{{LOGO}}/![](https://example.com/logo.png)/'  # image
 # Tables via sedmat
 gog docs sed <docId> 's/{{TABLE}}/|3x4|/'           # create 3-row, 4-col table
 gog docs sed <docId> 's/|1|[A1]/**Name**/'          # set cell A1
-```
-
-## Tasks
-
-```bash
-# List task lists
-gog tasks lists
-
-# List tasks in a list
-gog tasks list <tasklistId> --max 50
-
-# Get single task
-gog tasks get <tasklistId> <taskId>
-
-# Create task list
-gog tasks lists create "My List"
-
-# Add task
-gog tasks add <tasklistId> --title "Task title"
-gog tasks add <tasklistId> --title "Weekly sync" --due 2025-02-01 --repeat weekly --repeat-count 4
-
-# Update task
-gog tasks update <tasklistId> <taskId> --title "Updated title"
-
-# Complete / uncomplete task
-gog tasks done <tasklistId> <taskId>
-gog tasks undo <tasklistId> <taskId>
-
-# Delete task / clear completed
-gog tasks delete <tasklistId> <taskId>
-gog tasks clear <tasklistId>
-```
-
-Due dates are date-only; time components may be ignored by Google Tasks.
-
-## Contacts
-
-```bash
-# List personal contacts
-gog contacts list --max 50
-
-# Search contacts
-gog contacts search "Ada" --max 50
-
-# Get contact by resource name or email
-gog contacts get people/<resourceName>
-gog contacts get user@example.com
-
-# Create contact
-gog contacts create --given "John" --family "Doe" --email "john@example.com" --phone "+1234567890"
-
-# Update contact
-gog contacts update people/<resourceName> --given "Jane" --email "jane@example.com" --notes "Updated"
-
-# Delete contact
-gog contacts delete people/<resourceName>
-
-# Other contacts (people you've interacted with)
-gog contacts other list --max 50
-gog contacts other search "John" --max 50
-
-# Workspace directory (Google Workspace only)
-gog contacts directory list --max 50
-gog contacts directory search "Jane" --max 50
-```
-
-## Meet
-
-```bash
-# List meeting spaces
-gog meet spaces list
 ```
